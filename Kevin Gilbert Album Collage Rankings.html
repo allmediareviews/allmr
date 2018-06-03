@@ -1,0 +1,160 @@
+
+<!-- saved from url=(0052)https://xsaardo.github.io/Album-Art-Collage-Creator/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="./Kevin Gilbert Album Collage Rankings_files/album.css" rel="stylesheet" type="text/css">
+		<script src="./Kevin Gilbert Album Collage Rankings_files/jquery-3.1.0.js.download"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./Kevin Gilbert Album Collage Rankings_files/bootstrap.min.css">
+		<script src="./Kevin Gilbert Album Collage Rankings_files/bootstrap.min.js.download"></script>
+		<link rel="stylesheet" type="text/css" href="./Kevin Gilbert Album Collage Rankings_files/album.css">
+		<style type="text/css">
+			img {
+				
+			}
+			#albums {
+				padding-top: 30px;
+				padding-bottom: 50px;
+				overflow-x: hidden;
+				background-color: #99ccff;
+				width: 100vw;
+				position: relative;
+				margin-left: -50vw;
+				left: 50%;
+			}
+			#header {
+				padding-top: 10px;
+				padding-bottom: 30px;
+				overflow-x: hidden;
+				background-color: #123456;
+				width: 100vw;
+				position: relative;
+				margin-left: -50vw;
+				left: 50%;
+				color: white;
+			}
+		</style>
+		<title>Album Collage Maker</title>
+	</head>
+	
+	<body class="" style=""> 
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center jumbotron" id="header" style="background-color: rgb(18, 52, 86);">
+				<h1><kbd>Album Art Collage Maker<kbd></kbd></kbd></h1>
+				<b>Instructions:</b> Click on a box to insert album art · Drag/drop to move images · Change grid settings
+				</div>
+			</div>
+			<div class="row" id="firstrow">
+				<div class="col-lg-3">
+				</div>
+				<div class="col-lg-3 ">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="inputColor" class="control-label col-lg-7">Background Color (Hex)</label>
+							<div class="col-lg-5">
+							<input type="text" class="form-control" id="backcolor" value="#123456" placeholder="Hex Value">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="inputColor" class="control-label col-lg-8"># of Rows</label>
+							<div class="col-lg-4">
+							<input type="text" class="form-control" id="numRows" value="3">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="inputColor" class="control-label col-lg-8">Margin (in pixels)</label>
+							<div class="col-lg-4">
+							<input type="text" class="form-control" id="marginSize" value="0">
+							</div>
+						</div>
+						
+						
+					</form>
+				</div>
+				<div class="col-lg-3">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="inputColor" class="control-label col-lg-7">Image Size (in pixels)</label>
+							<div class="col-lg-5">
+							<input type="text" class="form-control" id="artsize" value="100">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputColor" class="control-label col-lg-8"># of Columns</label>
+							<div class="col-lg-4">
+							<input type="text" class="form-control" id="numCols" value="10">
+							</div>
+						</div>
+						
+						
+						<div align="center" class="col-lg-12">
+							<div class="col-lg-6">
+								<button type="button" class="btn-info btn-sm" onclick="generateGrid()">Apply Settings</button>
+							</div>
+							<div class="col-lg-6">
+								<button type="button" class="btn-success btn-sm" onclick="shuffle()">Shuffle Images</button>
+							</div>
+							
+						</div>
+						
+					</form>
+				</div>
+					
+				<div class="col-lg-3">
+				</div>
+			</div>
+			
+			<div width="100%" id="albums" style="background-color: rgb(18, 52, 86);"><div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/e2e9c8ea96fe4df0a6c3823af0846f01.png" id="0,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/c904a436b2d7fe3e0a3ebbb782b662c8.png" id="1,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/6eb023c84de64eb9a755656b52bcf1dc.png" id="2,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/896a9191af664c4da39bd4602358b01a.png" id="3,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/4788358011ed4942b6de2ae30630f1d9.png" id="4,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/ba15edd9f5ec4bf9871a79f295a9e2ef.png" id="5,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/b7f9bd01c9e54c96b8049a75999c10ee.png" id="6,0" alt="" style="margin: 1px;"></a></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<a id="a" data-target="#myModal" data-toggle="modal" onclick="setCurID(event)"><img ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" class="albumarts" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/25c074de51bf4d78befccbd7e6a020f1.png" id="7,0" alt="" style="margin: 1px;"></a></div></div>
+</div>
+			<div id="myModal" class="modal" role="dialog" style="display: none;">
+				
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">× </button>
+								<h4 class="modal-title"><span class="glyphicon glyphicon-search"></span>  Search for an album  </h4>
+							</div>
+							<div class="modal-body" id="modalBody">
+								<form>
+									<div class="form-group">
+										<input type="text" class="form-control" id="searchTerm" placeholder="Enter artist and/or album">
+									</div>
+								</form>
+								<div id="albumsFound"><div class="row"><div align="center" class="col-lg-12">
+<img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/25c074de51bf4d78befccbd7e6a020f1.png" id="https://lastfm-img2.akamaized.net/i/u/174s/25c074de51bf4d78befccbd7e6a020f1.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"></div></div>
+<div class="row"><div align="center" class="col-lg-12">
+<img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"><img hspace="5" vspace="5" width="100" height="100" src="./Kevin Gilbert Album Collage Rankings_files/default-placeholder.png" id="http://larics.rasip.fer.hr/wp-content/uploads/2016/04/default-placeholder.png" onclick="chooseIMG(this)"></div></div>
+</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" onclick="albumsearch()">Search!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<script src="./Kevin Gilbert Album Collage Rankings_files/albumart.js.download"></script>
+		<footer>
+		<center><blockquote>Programming is fun!<footer><a href="https://github.com/xsaardo">Cuong</a></footer></blockquote></center>
+		</footer>
+	
+	
+	
+</body></html>
